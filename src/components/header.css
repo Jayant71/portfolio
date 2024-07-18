@@ -1,0 +1,42 @@
+.Header {
+    background: #324833;
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    height: 60px;
+    justify-content: space-between;
+}
+
+.Header nav a {
+    margin: 0 10px;
+    color: #fff;
+    margin-right: 20px;
+    padding-bottom: 20px;
+    text-decoration: none;
+}
+
+.Header button {
+    background: #ff9800;
+    border: none;
+    padding: 10px 20px;
+    color: #fff;
+    cursor: pointer;
+    font-size: large;
+    border-radius: 20px;
+}
+
+.Header button:hover {
+    background: #f57c00;
+}
+
+#navbar {
+    padding-top: 10px;
+    font-size: larger;
+}
+
+#header-name {
+    font-size: 13px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    text-align: center;
+}

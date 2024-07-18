@@ -1,0 +1,17 @@
+#landing-page {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: #334833;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+#landing-page h1 {
+    font-size: 9em;
+    font-weight: bold;
+    text-align: center;
+}

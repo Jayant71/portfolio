@@ -1,5 +1,6 @@
 .Header {
-    background: #324833;
+    /* background: #324833; */
+    /* background: linear-gradient(to bottom , #3a3195, #574fc3); */
     color: #fff;
     padding: 10px;
     display: flex;

@@ -1,0 +1,36 @@
+.animation .animation_layer {
+    height: 100%;
+}
+
+.animation {
+    display: block;
+    position: relative;
+    z-index: 10;
+}
+
+.animation_layer {
+    background-position: bottom center;
+    background-size: auto 1038px;
+    background-repeat: repeat-x;
+    width: 100%;
+    position: static;
+}
+
+.animation_layer.parallax {
+    position: relative;
+}
+
+#layer1 {
+    background-image: url(../../images/1.jpg);
+    height: 100%;
+}
+
+#layer2 {
+    background-image: url(../../images/2.jpg);
+    height: 100%;
+}
+
+#layer3 {
+    background-image: url(../../images/3.jpg);
+    height: 100%;
+}

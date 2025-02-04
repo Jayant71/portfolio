@@ -39,14 +39,14 @@
         <div class="loader"></div>
     </div>
 
-    <!-- 3D Background Canvas -->
-    <canvas id="bg-canvas"></canvas>
-
     <!-- Main Content -->
     <main class="main-container" style="opacity: 0; transition: opacity 0.5s ease;">
         <!-- Navigation -->
         <nav class="nav-container">
             <div class="logo">JP</div>
+            <button class="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
             <ul class="nav-links">
                 <li><a href="#home" class="active">Home</a></li>
                 <li><a href="#about">About</a></li>
@@ -60,13 +60,22 @@
 
         <!-- Hero Section -->
         <section id="home" class="hero-section">
-            <div class="hero-content">
-                <h1>Hi, I'm Jayant Patel</h1>
-                <h2>Research & Development Engineer</h2>
-                <p>Specializing in Machine Learning, Computer Vision & AI</p>
-                <div class="cta-buttons">
-                    <a href="#projects" class="btn primary">View Projects</a>
-                    <a href="#contact" class="btn secondary">Contact Me</a>
+            <div class="hero-content-wrapper">
+                <div class="hero-content">
+                    <!-- <div class="hero-profile">
+                        <div class="hero-image">
+                            <img src="assets/profile.jpg" alt="Jayant Patel" />
+                        </div>
+                    </div> -->
+                    <div class="hero-text">
+                        <h1>Hi, I'm Jayant Patel</h1>
+                        <h2>Research & Development Engineer</h2>
+                        <p>Specializing in Machine Learning, Computer Vision & AI</p>
+                        <div class="cta-buttons">
+                            <a href="#projects" class="btn primary">View Projects</a>
+                            <a href="#contact" class="btn secondary">Contact Me</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -80,6 +89,7 @@
     <script src="js/background.js"></script>
     <script src="js/animations.js"></script>
     <script src="js/cms.js"></script>
+    <!-- Removed D3.js -->
     <script src="js/main.js"></script>
 </body>
 </html>

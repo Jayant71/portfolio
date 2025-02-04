@@ -1,58 +1,78 @@
 class PortfolioApp {
     constructor() {
-        this.setupFontAwesome();
+        this.lastScrollTop = 0;
+        this.navBar = document.querySelector('.nav-container');
+        this.mobileMenuButton = document.querySelector('.mobile-menu-toggle');
+        this.navLinks = document.querySelector('.nav-links');
+
+        this.init();
+    }
+
+    init() {
         this.setupMobileMenu();
         this.setupScrollEvents();
     }
 
-    setupFontAwesome() {
-        // Add Font Awesome CDN
-        const link = document.createElement('link');
-        link.rel = 'stylesheet';
-        link.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css';
-        document.head.appendChild(link);
-    }
-
     setupMobileMenu() {
-        // Create mobile menu button
-        const nav = document.querySelector('.nav-container');
-        const mobileButton = document.createElement('button');
-        mobileButton.className = 'mobile-menu-btn';
-        mobileButton.innerHTML = '<i class="fas fa-bars"></i>';
-        nav.insertBefore(mobileButton, nav.querySelector('.nav-links'));
+        if (!this.mobileMenuButton) return;
 
-        // Mobile menu functionality
-        mobileButton.addEventListener('click', () => {
-            const navLinks = document.querySelector('.nav-links');
-            navLinks.classList.toggle('active');
-            mobileButton.innerHTML = navLinks.classList.contains('active')
+        this.mobileMenuButton.addEventListener('click', (e) => {
+            e.stopPropagation();
+            this.navLinks.classList.toggle('active');
+            this.mobileMenuButton.innerHTML = this.navLinks.classList.contains('active')
                 ? '<i class="fas fa-times"></i>'
                 : '<i class="fas fa-bars"></i>';
         });
 
         // Close menu when clicking outside
         document.addEventListener('click', (e) => {
-            const navLinks = document.querySelector('.nav-links');
-            const isClickInside = nav.contains(e.target);
-
-            if (!isClickInside && navLinks.classList.contains('active')) {
-                navLinks.classList.remove('active');
-                mobileButton.innerHTML = '<i class="fas fa-bars"></i>';
+            if (!this.navBar.contains(e.target) && this.navLinks.classList.contains('active')) {
+                this.navLinks.classList.remove('active');
+                this.mobileMenuButton.innerHTML = '<i class="fas fa-bars"></i>';
             }
+        });
+
+        // Close menu when clicking a link
+        this.navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                this.navLinks.classList.remove('active');
+                this.mobileMenuButton.innerHTML = '<i class="fas fa-bars"></i>';
+            });
         });
     }
 
     setupScrollEvents() {
+        let lastScrollTop = 0;
+        const threshold = 200; // Minimum scroll amount before hiding nav
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+            // Show/hide nav based on scroll direction
+            if (currentScroll > threshold) {
+                if (currentScroll > lastScrollTop) {
+                    // Scrolling down
+                    this.navBar.classList.add('nav-hidden');
+                } else {
+                    // Scrolling up
+                    this.navBar.classList.remove('nav-hidden');
+                }
+            } else {
+                // At the top
+                this.navBar.classList.remove('nav-hidden');
+            }
+
+            lastScrollTop = currentScroll;
+        });
+
         // Update active nav link on scroll
         const sections = document.querySelectorAll('section');
         const navLinks = document.querySelectorAll('.nav-links a');
 
         window.addEventListener('scroll', () => {
             let current = '';
-
             sections.forEach(section => {
                 const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
                 if (window.pageYOffset >= sectionTop - 150) {
                     current = section.getAttribute('id');
                 }
@@ -65,11 +85,6 @@ class PortfolioApp {
                 }
             });
         });
-
-        // Smooth scroll behavior for Safari and other browsers that don't support scroll-behavior: smooth
-        if (!('scrollBehavior' in document.documentElement.style)) {
-            this.polyfillSmoothScroll();
-        }
     }
 
     polyfillSmoothScroll() {
@@ -135,8 +150,7 @@ class PortfolioApp {
     }
 }
 
-// Initialize app when page loads
-window.addEventListener('load', () => {
-    const app = new PortfolioApp();
-    app.addMobileStyles();
+// Initialize app
+document.addEventListener('DOMContentLoaded', () => {
+    new PortfolioApp();
 });

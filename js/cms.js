@@ -26,16 +26,23 @@ class ContentManager {
     renderAboutSection() {
         const section = this.createSection('about', 'About Me');
         section.innerHTML += `
-        <div class="section-content">
-            <div class="card">
-                <h2 class="card-title">${CONFIG.about.name}</h2>
-                <h3 class="card-subtitle">${CONFIG.about.title}</h3>
-                <p>${CONFIG.about.location}</p>
-                <div class="card-details">
-                    <span>Email: <a href="mailto:${CONFIG.about.contact.email}">${CONFIG.about.contact.email}</a></span>
-                    <span>Phone: <a href="tel:${CONFIG.about.contact.phone}">${CONFIG.about.contact.phone}</a></span>
-                    <span>LinkedIn: <a href="${CONFIG.about.contact.linkedin}" target="_blank">linkedin.com/in/jayantpatel71</a></span>
-                    <span>GitHub: <a href="${CONFIG.about.contact.github}" target="_blank">github.com/Jayant71</a></span>
+        <div class="section-content about-container">
+            <div class="about-profile">
+                <div class="profile-image">
+                    <img src="assets/profile.jpg" alt="${CONFIG.about.name}" />
+                </div>
+            </div>
+            <div class="about-content">
+                <div class="about-header">
+                    <h2 class="about-name">${CONFIG.about.name}</h2>
+                    <h3 class="about-title">${CONFIG.about.title}</h3>
+                    <p class="about-location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        ${CONFIG.about.location}
+                    </p>
+                </div>
+                <div class="about-description">
+                    <p>I am a passionate Research & Development Engineer specializing in Machine Learning and Computer Vision. With a strong foundation in AI technologies, I focus on developing innovative solutions that bridge theoretical concepts with practical applications.</p>
                 </div>
             </div>
         </div>
@@ -144,14 +151,37 @@ class ContentManager {
     renderCertificationsSection() {
         const section = this.createSection('certifications', 'Certifications');
         section.innerHTML += `
-        <div class="section-content">
-        ${CONFIG.certifications.map(cert => `
-            <div class="card">
-                <h3 class="card-title">${cert.title}</h3>
-                <h4 class="card-subtitle">${cert.issuer}</h4>
+            <div class="section-content">
+                <p class="cert-intro">Professional certifications and achievements in the field</p>
+                <div class="cert-grid">
+                    ${CONFIG.certifications.map(cert => `
+                        <div class="cert-card">
+                            <div class="cert-icon">
+                                <i class="fas fa-certificate"></i>
+                            </div>
+                            <div class="cert-content">
+                                <h3>${cert.title}</h3>
+                                <p class="issuer">
+                                    <i class="fas fa-building"></i>
+                                    ${cert.issuer}
+                                </p>
+                                ${cert.date ? `
+                                    <p class="date">
+                                        <i class="fas fa-calendar-alt"></i>
+                                        ${cert.date}
+                                    </p>
+                                ` : ''}
+                                ${cert.link ? `
+                                    <a href="${cert.link}" target="_blank" class="cert-link">
+                                        <i class="fas fa-external-link-alt"></i>
+                                        View Certificate
+                                    </a>
+                                ` : ''}
+                            </div>
+                        </div>
+                    `).join('')}
+                </div>
             </div>
-        `).join('')}
-        </div>
         `;
         this.contentContainer.appendChild(section);
     }
@@ -162,31 +192,59 @@ class ContentManager {
 
         section.innerHTML += `
             <div class="contact-container">
-                <div class="contact-methods">
-                    <a href="mailto:${email}" class="contact-method email">
-                        <i class="fas fa-envelope"></i>
-                        <span>Email</span>
-                        <p>${email}</p>
+                <p class="contact-intro">Feel free to reach out for collaborations, opportunities, or just to say hello!</p>
+                <div class="contact-grid">
+                    <a href="mailto:${email}" class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope-open-text"></i>
+                        </div>
+                        <div class="contact-info">
+                            <h3>Email</h3>
+                            <p>${email}</p>
+                        </div>
+                        <div class="contact-hover">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
                     </a>
-                    <a href="tel:${phone}" class="contact-method phone">
-                        <i class="fas fa-phone"></i>
-                        <span>Phone</span>
-                        <p>${phone}</p>
+                    <a href="tel:${phone}" class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="contact-info">
+                            <h3>Phone</h3>
+                            <p>${phone}</p>
+                        </div>
+                        <div class="contact-hover">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
                     </a>
-                    <a href="https://${linkedin}" target="_blank" class="contact-method linkedin">
-                        <i class="fab fa-linkedin"></i>
-                        <span>LinkedIn</span>
-                        <p>Connect with me</p>
+                    <a href="https://${linkedin}" target="_blank" class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fab fa-linkedin-in"></i>
+                        </div>
+                        <div class="contact-info">
+                            <h3>LinkedIn</h3>
+                            <p>Connect Professionally</p>
+                        </div>
+                        <div class="contact-hover">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
                     </a>
-                    <a href="https://${github}" target="_blank" class="contact-method github">
-                        <i class="fab fa-github"></i>
-                        <span>GitHub</span>
-                        <p>View my repositories</p>
+                    <a href="https://${github}" target="_blank" class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <div class="contact-info">
+                            <h3>GitHub</h3>
+                            <p>View My Work</p>
+                        </div>
+                        <div class="contact-hover">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
                     </a>
                 </div>
             </div>
         `;
-
         this.contentContainer.appendChild(section);
     }
 }

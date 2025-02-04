@@ -37,7 +37,7 @@ const CONFIG = {
         {
             role: "Research Intern",
             company: "Indian Institute of Technology (IIT) Jammu",
-            location: "Jammu, Jammu & Kashmir",
+            location: "Jammu, Jammu & Kashmir - Hybrid",
             period: "February 2024 – July 2024",
             highlights: [
                 "Researched and evaluated object detection models, specifically YOLO versions 3 to 8 for Personal Protective Equipment (PPE) detection, findings guided future model selection processes while improving overall understanding of performance metrics within the team.",
@@ -82,7 +82,8 @@ const CONFIG = {
             icon: "fas fa-code",
             items: [
                 { name: "Python", icon: "fab fa-python" },
-                { name: "C", icon: "fas fa-terminal" }
+                { name: "C/C++", icon: "fas fa-terminal" },
+                { name: "Kotlin", icon: "fas fa-terminal" }
             ]
         },
         "Frameworks and Libraries": {
@@ -119,11 +120,15 @@ const CONFIG = {
     certifications: [
         {
             title: "Introduction to Machine Learning",
-            issuer: "NPTEL"
+            issuer: "NPTEL",
+            date: "December 2023",
+            link: "#"
         },
         {
             title: "Flutter Development Bootcamp with Dart",
-            issuer: "Udemy"
+            issuer: "Udemy",
+            date: "October 2023",
+            link: "#"
         }
     ],
     // Background configuration

@@ -4,11 +4,11 @@ class ParticleNetwork {
         this.camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
         this.renderer = new THREE.WebGLRenderer({
             alpha: true,
-            antialias: true
+            antialias: false // Disable antialias for better performance
         });
 
         this.renderer.setSize(window.innerWidth, window.innerHeight);
-        this.renderer.setPixelRatio(window.devicePixelRatio);
+        this.renderer.setPixelRatio(Math.min(1.5, window.devicePixelRatio)); // Limit pixel ratio
         this.renderer.setClearColor(0x000000, 0);
 
         // Insert canvas as the first child of body
@@ -102,31 +102,32 @@ class ParticleNetwork {
             .slice(0, count);
     }
 
-    animate(currentTime = 0) {
-        this.animationFrameId = requestAnimationFrame(time => this.animate(time));
+    animate() {
+        this.animationFrameId = requestAnimationFrame(() => this.animate());
 
-        // Throttle frame rate
-        const elapsed = currentTime - this.lastTime;
-        if (elapsed < this.fpsInterval) return;
-        this.lastTime = currentTime - (elapsed % this.fpsInterval);
+        // Smoother delta-based animation
+        const delta = 16.67 / 1000; // Target 60fps timing
 
-        // Update particle positions with optimized calculations
+        // Optimized particle updates
         this.particles.forEach(particle => {
-            particle.position.add(particle.velocity);
+            particle.position.addScaledVector(particle.velocity, delta * 60);
 
-            // Simplified boundary checking
-            ['x', 'y', 'z'].forEach(axis => {
-                if (Math.abs(particle.position[axis]) > 4) {
-                    particle.velocity[axis] *= -1;
-                }
-            });
+            // More efficient boundary check
+            if (Math.abs(particle.position.x) > 4) particle.velocity.x *= -0.95;
+            if (Math.abs(particle.position.y) > 4) particle.velocity.y *= -0.95;
+            if (Math.abs(particle.position.z) > 4) particle.velocity.z *= -0.95;
         });
 
-        // Batch update connections
-        this.connections.forEach(({ line, particleA, particleB }) => {
-            line.geometry.setFromPoints([particleA.position, particleB.position]);
-            line.geometry.attributes.position.needsUpdate = true;
-        });
+        // Only update connections when needed
+        if (this.connections.length > 0) {
+            this.connections[0].line.geometry.setFromPoints(
+                this.connections.map(({ particleA, particleB }) => [
+                    particleA.position,
+                    particleB.position
+                ]).flat()
+            );
+            this.connections[0].line.geometry.attributes.position.needsUpdate = true;
+        }
 
         this.renderer.render(this.scene, this.camera);
     }

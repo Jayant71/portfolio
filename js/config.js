@@ -36,6 +36,13 @@ const CONFIG = {
     ],
     experience: [
         {
+            role: "Android Developer Intern",
+            company: "Iron Willed Tech Ltd ",
+            location: "Remote",
+            period: "January 2025 – Present",
+            highlights: []
+        },
+        {
             role: "Research Intern",
             company: "Indian Institute of Technology (IIT) Jammu",
             location: "Jammu, Jammu & Kashmir - Hybrid",

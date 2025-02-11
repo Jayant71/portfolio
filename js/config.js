@@ -3,6 +3,7 @@ const CONFIG = {
         name: "Jayant Patel",
         title: "Research & Development Engineer",
         location: "Korba, Chhattisgarh 495452",
+        profileImage: "https://media.licdn.com/dms/image/v2/D4D03AQE4MMe5kMBHoA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1693370193686?e=1744848000&v=beta&t=MalMpmQvaR_WVLrr0YVGIduTnAFIQDnthhJonbukT9U",
         contact: {
             email: "jayant.07124@gmail.com",
             phone: "+91 9358957326",

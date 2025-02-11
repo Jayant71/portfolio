@@ -29,7 +29,7 @@ class ContentManager {
         <div class="section-content about-container">
             <div class="about-profile">
                 <div class="profile-image">
-                    <img src="assets/profile.jpg" alt="${CONFIG.about.name}" />
+                    <img src="${CONFIG.about.profileImage}" alt="${CONFIG.about.name}" />
                 </div>
             </div>
             <div class="about-content">

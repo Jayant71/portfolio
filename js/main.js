@@ -4,6 +4,7 @@ class PortfolioApp {
         this.navBar = document.querySelector('.nav-container');
         this.mobileMenuButton = document.querySelector('.mobile-menu-toggle');
         this.navLinks = document.querySelector('.nav-links');
+        this.heroContent = document.querySelector('.hero-content');
 
         this.init();
     }
@@ -11,6 +12,27 @@ class PortfolioApp {
     init() {
         this.setupMobileMenu();
         this.setupScrollEvents();
+        this.setupHeroEffects();
+    }
+
+    setupHeroEffects() {
+        if (!this.heroContent) return;
+
+        const root = document.documentElement;
+
+        this.heroContent.addEventListener('mousemove', (e) => {
+            const rect = this.heroContent.getBoundingClientRect();
+            const x = ((e.clientX - rect.left) / this.heroContent.clientWidth) * 100;
+            const y = ((e.clientY - rect.top) / this.heroContent.clientHeight) * 100;
+
+            root.style.setProperty('--x', `${x}%`);
+            root.style.setProperty('--y', `${y}%`);
+        });
+
+        this.heroContent.addEventListener('mouseleave', () => {
+            root.style.setProperty('--x', '50%');
+            root.style.setProperty('--y', '50%');
+        });
     }
 
     setupMobileMenu() {

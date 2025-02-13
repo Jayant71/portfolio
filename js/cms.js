@@ -93,13 +93,16 @@ class ContentManager {
         <div class="section-content">
         ${CONFIG.projects.map(project => `
             <div class="card">
-                <h3 class="card-title">${project.title}</h3>
-                <h4 class="card-subtitle">${project.period}</h4>
-                ${project.tags ? `<div class="card-details">${project.tags.map(tag => `<span>${tag}</span>`).join('')}</div>` : ''}
-                <ul class="highlights-list">
-                    ${project.highlights.map(highlight => `<li>${highlight}</li>`).join('')}
-                </ul>
-                ${project.link ? `<div class="card-details"><a href="${project.link}" target="_blank">Link</a></div>` : ''}
+                <div class="card-content">
+                    <div class="card-image-wrapper">
+                        <img src="${project.image}" alt="${project.title}" class="card-image">
+                    </div>
+                    <h3 class="card-title">${project.title}</h3>
+                    <p class="card-description">${project.description}</p>
+                    <div class="card-tags">
+                        ${project.tags ? project.tags.map(tag => `<a href="#" class="card-tag">${tag}</a>`).join('') : ''}
+                    </div>
+                </div>
             </div>
         `).join('')}
         </div>
@@ -113,9 +116,18 @@ class ContentManager {
         <div class="section-content">
         ${CONFIG.publications.map(pub => `
             <div class="card">
+            <div class="card">
                 <h3 class="card-title">${pub.title}</h3>
-                <h4 class="card-subtitle">${pub.journal}, ${pub.volume}, ${pub.date}</h4>
-                ${pub.link ? `<div class="card-details"><a href="${pub.link}" target="_blank">Link</a></div>` : ''}
+                <div class="publication-meta">
+                    <div><i class="fas fa-book"></i> ${pub.journal}</div>
+                    <div><i class="fas fa-calendar"></i> ${pub.volume}</div>
+                    <div><i class="fas fa-clock"></i> ${pub.date}</div>
+                </div>
+                ${pub.link ? `
+                    <a href="${pub.link}" target="_blank" rel="noopener noreferrer" class="publication-link">
+                        <i class="fas fa-external-link-alt"></i> View Publication
+                    </a>
+                ` : ''}
             </div>
         `).join('')}
         </div>
@@ -196,7 +208,7 @@ class ContentManager {
                 <div class="contact-grid">
                     <a href="mailto:${email}" class="contact-card">
                         <div class="contact-icon">
-                            <i class="fas fa-envelope-open-text"></i>
+                            <i class="fas fa-envelope"></i>
                         </div>
                         <div class="contact-info">
                             <h3>Email</h3>

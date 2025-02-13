@@ -1,7 +1,7 @@
 const CONFIG = {
     about: {
         name: "Jayant Patel",
-        title: "Research & Development Engineer",
+        title: "Research & Software Development Engineer",
         location: "Korba, Chhattisgarh 495452",
         profileImage: "https://media.licdn.com/dms/image/v2/D4D03AQE4MMe5kMBHoA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1693370193686?e=1744848000&v=beta&t=MalMpmQvaR_WVLrr0YVGIduTnAFIQDnthhJonbukT9U",
         contact: {
@@ -36,7 +36,7 @@ const CONFIG = {
     ],
     experience: [
         {
-            role: "Android Developer Intern",
+            role: "Software Developer Intern",
             company: "Iron Willed Tech Ltd ",
             location: "Remote",
             period: "January 2025 – Present",
@@ -58,6 +58,8 @@ const CONFIG = {
         {
             title: "Model Comparison and Compression",
             period: "February 2024 – July 2024",
+            image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=500&q=80",
+            description: "Optimized YOLO models for PPE detection, achieving 80.95% size reduction while maintaining high accuracy.",
             tags: ["Machine Learning", "Computer Vision", "YOLO"],
             highlights: [
                 "Analyzed 6 YOLO object detection models for PPE detection on the CHV Dataset.",
@@ -68,6 +70,8 @@ const CONFIG = {
         {
             title: "Plant Disease Recognition Using Machine Learning",
             period: "September 2023 – December 2023",
+            image: "https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?w=500&q=80",
+            description: "AI-powered mobile app for plant disease detection with 98.45% accuracy and integrated chatbot for farmer support.",
             tags: ["Python", "Machine Learning", "Flutter"],
             link: "#",
             highlights: [

@@ -43,19 +43,19 @@ const portfolioData: PortfolioData = {
     categories: [
       {
         name: "Programming Languages",
-        skills: ["Python", "C/C++", "Kotlin"],
+        skills: ["Python", "Javascript", "Kotlin"],
       },
       {
         name: "Frameworks & Libraries",
-        skills: ["TensorFlow", "PyTorch", "OpenCV"],
+        skills: ["PyTorch", "OpenCV", "LangChain", "n8n", "Flask", "React"],
       },
       {
         name: "Technologies",
-        skills: ["Machine Learning", "Deep Learning", "Computer Vision", "Android", "Data Analysis"],
+        skills: ["AI Agent", "Automation", "Machine Learning", "Deep Learning", "Computer Vision", "Android", "Data Analysis"],
       },
       {
         name: "Tools",
-        skills: ["Git", "Linux", "Jupyter Notebooks", "VS Code", "Android Studio", "Firebase", "Docker"],
+        skills: ["Git", "Jupyter Notebooks", "VS Code", "Android Studio", "Firebase", "Docker"],
       },
     ],
   },
@@ -64,12 +64,27 @@ const portfolioData: PortfolioData = {
     description: "A selection of projects that showcase my development and research capabilities.", // Kept from original cms.ts
     projects: [
       {
+        title: "Text Behind Photo",
+        description: "Text Behind Photo is a dynamic web application that allows users to creatively integrate text within their images.Built with a modern frontend stack of Vite, React, TypeScript, and Tailwind CSS, the application provides a seamless user experience for uploading photos.The powerful FastAPI backend then processes the image, utilizing a YOLO model for person detection and a SAM2 model for precise segmentation through the Ultralytics framework.After automatically separating the subject from the background, the application returns the distinct layers to the user.From there, users can add multiple text elements, each individually customizable, and cleverly place them either in front of or behind the main subject to create visually striking compositions.",
+        imageUrl: "/images/p3.webp",
+        technologies: ["React", "Tailwind CSS", "YOLO", "Object Detection"],
+        githubUrl: "https://text-behind-photo-dwxw.vercel.app/",
+      },
+      {
+        title: "Real-time Book Reading Attention Monitoring System",
+        description:
+          "This project is a real-time attention monitoring system for readers. Using a webcam, it employs a YOLO model to detect the user's face and the book they are reading, while the L2CS-Net model analyzes their gaze to determine if they are paying attention.The system, built entirely in Python, can generate session reports with attention metrics and can be configured for different monitoring durations.For optimal performance, a CUDA- enabled GPU is recommended.",
+        imageUrl: "/images/p4.webp",
+        technologies: ["Python", "Machine Learning", "Computer Vision", "YOLO", "Object Detection"],
+        githubUrl: "https://github.com/Jayant71/Book-Reading_Attentiton-Monitor.git",
+      },
+      {
         title: "Model Comparison and Compression",
         description:
           "Optimized YOLO models for PPE detection, achieving 80.95% size reduction while maintaining high accuracy. Highlights: Analyzed 6 YOLO object detection models for PPE detection on the CHV Dataset. Optimized YOLOv8n models, achieving an 80.95% reduction in model size and an 83.75% reduction in parameters, with minimal drop in precision and recall compared with YOLOv8n. Executed rigorous testing protocols to evaluate YOLOv8 effectiveness against real-world ppe datasets, identifying critical areas for improvement which led to more accurate PPE identification within operational environments.",
-        imageUrl: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=500&q=80",
-        technologies: ["Machine Learning", "Computer Vision", "YOLO"],
-        githubUrl: "https://github.com/Jayant71", // Defaulted as project link in config.js was "#"
+        imageUrl: "/images/p2.webp",
+        technologies: ["Machine Learning", "Computer Vision", "YOLO", "Object Detection"],
+        githubUrl: "https://github.com/Jayant71",
       },
       {
         title: "Plant Disease Recognition Using Machine Learning",
@@ -88,8 +103,8 @@ const portfolioData: PortfolioData = {
       {
         title: "Development of Mobile Application for Sickle Cell Anemia Treatment Support System",
         conference: "YMER, Volume 23, Issue 06 (June 2024)",
-        description: "", // No specific description in config.js for this publication
-        paperUrl: "#", // From config.js publication link
+        description: "",
+        paperUrl: "https://ymerdigital.com/archives/?cpage=1&issId=\%202306",
       },
     ],
   },

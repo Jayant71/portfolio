@@ -24,6 +24,25 @@ export interface AboutData {
   features: Feature[]
 }
 
+export interface JourneyStep {
+  id: string
+  company: string
+  role: string
+  duration: string
+  location: string
+  description: string
+  achievements: string[]
+  technologies: string[]
+  type: "internship" | "education" | "project"
+  icon: string
+}
+
+export interface JourneyData {
+  title: string
+  description: string
+  steps: JourneyStep[]
+}
+
 export interface SkillCategory {
   name: string
   skills: string[]
@@ -82,6 +101,7 @@ export interface FooterData {
 export interface PortfolioData {
   hero: HeroData
   about: AboutData
+  journey: JourneyData
   skills: SkillsData
   projects: ProjectsData
   research: ResearchData

@@ -37,6 +37,63 @@ const portfolioData: PortfolioData = {
       },
     ],
   },
+  journey: {
+    title: "My Journey so Far",
+    description: "From research labs to tech companies, here's how I've grown as a developer and researcher.",
+    steps: [
+      {
+        id: "iron-willed",
+        company: "Iron Willed Tech Ltd",
+        role: "Software Developer Intern",
+        duration: "January 2025 – June 2025",
+        location: "Remote",
+        description: "Developed core features for a lifestyle fashion app using modern Android technologies and ML integration for virtual try-on capabilities.",
+        achievements: [
+          "Built responsive UI/UX with Kotlin and Jetpack Compose",
+          "Integrated Firebase APIs for authentication and dynamic content",
+          "Implemented Google MediaPipe ML model for real-time face mesh generation",
+          "Applied Clean Architecture principles for scalable, production-ready code"
+        ],
+        technologies: ["Kotlin", "Jetpack Compose", "Firebase", "Google MediaPipe", "Clean Architecture", "Android", "ML Integration", "Software Engineering"],
+        type: "internship",
+        icon: "briefcase"
+      },
+      {
+        id: "iit-jammu",
+        company: "Indian Institute of Technology (IIT) Jammu",
+        role: "Research Intern",
+        duration: "February 2024 - July 2024",
+        location: "Hybrid - Jammu, India",
+        description: "Conducted cutting-edge research in computer vision and machine learning, focusing on object detection and model optimization for real-world applications.",
+        achievements: [
+          "Optimized YOLO models achieving 80.95% size reduction with minimal accuracy loss",
+          "Developed PPE detection system with 83.75% parameter reduction",
+          "Published research findings on model compression techniques",
+          "Collaborated with PhD researchers on advanced computer vision projects"
+        ],
+        technologies: ["Python", "PyTorch", "YOLO", "Computer Vision", "Model Optimization", "Deep Learning"],
+        type: "internship",
+        icon: "graduation-cap"
+      },
+      {
+        id: "education",
+        company: "University Teaching Department - CSVTU",
+        role: "Bachelor of Technology in Computer Science",
+        duration: "2021 - 2025",
+        location: "Bhilai, Chhattisgarh, India",
+        description: "Building a strong foundation in computer science principles while actively working on research projects and developing practical applications.",
+        achievements: [
+          "Specialized in Machine Learning and Computer Vision",
+          "Developed multiple award-winning projects including plant disease detection app",
+          "Active participant in coding competitions and hackathons",
+          "Maintained excellent academic performance while pursuing practical projects"
+        ],
+        technologies: ["Data Structures", "Algorithms", "Machine Learning", "Programming", "DBMS", "Research Methodology", "Software Engineering",],
+        type: "education",
+        icon: "book-open"
+      }
+    ]
+  },
   skills: {
     title: "Skills & Technologies",
     description: "A comprehensive toolkit for modern development and research.", // Kept from original cms.ts

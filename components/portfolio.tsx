@@ -5,6 +5,7 @@ import { ThemeProvider } from "@/components/theme-provider"
 import Header from "@/components/header"
 import Hero from "@/components/hero"
 import About from "@/components/about"
+import Journey from "@/components/journey"
 import Skills from "@/components/skills"
 import Projects from "@/components/projects"
 import Research from "@/components/research"
@@ -52,6 +53,7 @@ export default function Portfolio() {
           <main>
             <Hero data={portfolioData.hero} />
             <About data={portfolioData.about} />
+            <Journey data={portfolioData.journey} />
             <Skills data={portfolioData.skills} />
             <Projects data={portfolioData.projects} />
             <Research data={portfolioData.research} />

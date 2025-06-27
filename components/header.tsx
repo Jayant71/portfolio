@@ -23,6 +23,7 @@ export default function Header() {
 
   const navItems = [
     { name: "About", href: "#about" },
+    { name: "Journey", href: "#journey" },
     { name: "Skills", href: "#skills" },
     { name: "Projects", href: "#projects" },
     { name: "Research", href: "#research" },
@@ -32,8 +33,8 @@ export default function Header() {
   return (
     <header
       className={`sticky top-0 z-50 w-full transition-all duration-200 ${isScrolled
-          ? "border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"
-          : "bg-transparent"
+        ? "border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"
+        : "bg-transparent"
         }`}
     >
       <div className="container flex h-16 items-center justify-between">

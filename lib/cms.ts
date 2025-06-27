@@ -141,7 +141,7 @@ const portfolioData: PortfolioData = {
           "Optimized YOLO models for PPE detection, achieving 80.95% size reduction while maintaining high accuracy. Highlights: Analyzed 6 YOLO object detection models for PPE detection on the CHV Dataset. Optimized YOLOv8n models, achieving an 80.95% reduction in model size and an 83.75% reduction in parameters, with minimal drop in precision and recall compared with YOLOv8n. Executed rigorous testing protocols to evaluate YOLOv8 effectiveness against real-world ppe datasets, identifying critical areas for improvement which led to more accurate PPE identification within operational environments.",
         imageUrl: "/images/p2.webp",
         technologies: ["Machine Learning", "Computer Vision", "YOLO", "Object Detection"],
-        githubUrl: "https://github.com/Jayant71",
+        githubUrl: "https://github.com/Jayant71/Eff-Yolov8.git",
       },
       {
         title: "Plant Disease Recognition Using Machine Learning",
@@ -149,7 +149,7 @@ const portfolioData: PortfolioData = {
           "AI-powered mobile app for plant disease detection with 98.45% accuracy and integrated chatbot for farmer support. Highlights: Fine-tuned a pre-trained MobileNetV3 CNN model, achieving 98.45% training accuracy and 97.69% validation accuracy for plant disease recognition. Engineered an intuitive Android application leveraging Flutter, designed specifically for farmers; integrated a plant-specific chatbot, resulting in over 100 unique queries answered during testing.",
         imageUrl: "https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?w=500&q=80",
         technologies: ["Python", "Machine Learning", "Flutter"],
-        githubUrl: "https://github.com/Jayant71", // Defaulted as project link in config.js was "#"
+        githubUrl: "https://github.com/Jayant71/Plant-Disease-Prediction--MobileNetV3-.git", // Defaulted as project link in config.js was "#"
       },
     ],
   },

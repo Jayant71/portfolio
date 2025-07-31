@@ -158,10 +158,22 @@ const portfolioData: PortfolioData = {
     description: "Contributing to the advancement of computer science through research and publications.", // Kept from original cms.ts
     publications: [
       {
+        title: "AI Powered Attention Monitoring System For Book Reading",
+        conference: "High Technology Letters, Volume 31, Issue 7, July 2025",
+        description: "",
+        paperUrl: "#",
+      },
+      {
+        title: "Attention Monitoring Systems in Book Reading: A Comprehensive Review",
+        conference: "10th International Conference 'Shaastrarth-2025', Rungta College of Engineering and Technology, Bhilai",
+        description: "",
+        paperUrl: "#",
+      },
+      {
         title: "Development of Mobile Application for Sickle Cell Anemia Treatment Support System",
         conference: "YMER, Volume 23, Issue 06 (June 2024)",
         description: "",
-        paperUrl: "https://ymerdigital.com/archives/?cpage=1&issId=\%202306",
+        paperUrl: "https://ymerdigital.com/archives/?cpage=1&issId=%202306",
       },
     ],
   },

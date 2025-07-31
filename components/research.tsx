@@ -45,12 +45,14 @@ export default function Research({ data }: ResearchProps) {
                     <p className="text-muted-foreground mb-2">{publication.conference}</p>
                     <p className="text-sm text-muted-foreground">{publication.description}</p>
                   </div>
-                  <Button size="sm" variant="outline" asChild className="shrink-0">
-                    <Link href={publication.paperUrl} target="_blank" rel="noopener noreferrer">
-                      <ExternalLink className="mr-2 h-4 w-4" />
-                      Paper
-                    </Link>
-                  </Button>
+                  {publication.paperUrl && publication.paperUrl !== "#" && (
+                    <a href={publication.paperUrl} target="_blank" rel="noopener noreferrer">
+                      <Button size="sm" variant="outline" className="shrink-0">
+                        <ExternalLink className="mr-2 h-4 w-4" />
+                        Paper
+                      </Button>
+                    </a>
+                  )}
                 </div>
               </CardContent>
             </Card>

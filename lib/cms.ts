@@ -7,7 +7,7 @@ import type { PortfolioData } from "./types"
 const portfolioData: PortfolioData = {
   hero: {
     title: "Hi, I'm Jayant Patel",
-    subtitle: "Research & Software Development Engineer",
+    subtitle: "Researcher, Software and AI Agent Developer",
     resumeUrl: "/resume.pdf", // Kept from original cms.ts as not in config.js
     socialLinks: [
       { platform: "github", url: "https://github.com/Jayant71" },

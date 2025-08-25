@@ -42,6 +42,34 @@ const portfolioData: PortfolioData = {
     description: "From research labs to tech companies, here's how I've grown as a developer and researcher.",
     steps: [
       {
+        id: "clone-futura",
+        company: "Clone Futura",
+        role: "AI Agent Developer Intern",
+        duration: "August 2025 – Present",
+        location: "Remote",
+        description: "Building production-ready AI agent features and integrations, focusing on reliable multi-agent workflows, LLM connectors, and observability to enable robust automation and research iterations.",
+        achievements: [
+          
+        ],
+        technologies: ["AI Agents", "Loveable.dev", "Github Copilot", "Vibe Coding", "Supabase", "Clean Code", "Vercel Deployment", "CI/CD", "n8n"],
+        type: "internship",
+        icon: "briefcase"
+      },
+      {
+        id: "nit-warangal",
+        company: "National Institute of Technology (NIT) Warangal",
+        role: "Research Intern",
+        duration: "August 2025 - Present",
+        location: "Remote",
+        description: "Conducting research on advanced computer vision techniques, focusing on model optimization and lightweight classification models for deployment on edge devices.",
+        achievements: [
+          
+        ],
+        technologies: ["Python", "PyTorch", "YOLO", "Computer Vision", "Image Classification", "Model Optimization", "Deep Learning", "Data Preparation", "Data Augmentation", "Data Annotation", "Google Colab", "Kaggle"],
+        type: "internship",
+        icon: "graduation-cap"
+      },
+      {
         id: "iron-willed",
         company: "Iron Willed Tech Ltd",
         role: "Software Developer Intern",
@@ -54,7 +82,7 @@ const portfolioData: PortfolioData = {
           "Implemented Google MediaPipe ML model for real-time face mesh generation",
           "Applied Clean Architecture principles for scalable, production-ready code"
         ],
-        technologies: ["Kotlin", "Jetpack Compose", "Firebase", "Google MediaPipe", "Clean Architecture", "Android", "ML Integration", "Software Engineering"],
+        technologies: ["Kotlin", "Jetpack Compose", "Firebase", "Google MediaPipe", "Clean Architecture", "Git", "Github", "Android", "ML Integration", "Software Engineering"],
         type: "internship",
         icon: "briefcase"
       },

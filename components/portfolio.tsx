@@ -29,7 +29,7 @@ export default function Portfolio() {
       } catch (error) {
         console.error("Failed to load portfolio data:", error)
       } finally {
-        // Add a small delay to ensure smooth transition
+
         setTimeout(() => setLoading(false), 800)
       }
     }

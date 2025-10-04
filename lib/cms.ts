@@ -43,31 +43,17 @@ const portfolioData: PortfolioData = {
     steps: [
       {
         id: "clone-futura",
-        company: "Clone Futura",
-        role: "AI Agent Developer Intern",
+        company: "Clonefutura",
+        role: "Software Developer Intern",
         duration: "August 2025 – Present",
         location: "Remote",
-        description: "Building production-ready AI agent features and integrations, focusing on reliable multi-agent workflows, LLM connectors, and observability to enable robust automation and research iterations.",
+        description: "Building production-ready Fullstack AI agent features and integrations, focusing on reliable multi-agent workflows, LLM connectors, and observability to enable robust automation and research iterations.",
         achievements: [
-          
+          "Designing and developing a Check-in/Check-out web application at Online Live Learning (OLL), currently in production and used to track 50+ educators."
         ],
-        technologies: ["AI Agents", "Loveable.dev", "Github Copilot", "Vibe Coding", "Supabase", "Clean Code", "Vercel Deployment", "CI/CD", "n8n"],
+        technologies: ["AI Agents", "React", "Next.js", "Supabase", "Clean Code", "Vercel", "CI/CD", "n8n", "Github Copilot"],
         type: "internship",
         icon: "briefcase"
-      },
-      {
-        id: "nit-warangal",
-        company: "National Institute of Technology (NIT) Warangal",
-        role: "Research Intern",
-        duration: "August 2025 - Present",
-        location: "Remote",
-        description: "Conducting research on advanced computer vision techniques, focusing on model optimization and lightweight classification models for deployment on edge devices.",
-        achievements: [
-          
-        ],
-        technologies: ["Python", "PyTorch", "YOLO", "Computer Vision", "Image Classification", "Model Optimization", "Deep Learning", "Data Preparation", "Data Augmentation", "Data Annotation", "Google Colab", "Kaggle"],
-        type: "internship",
-        icon: "graduation-cap"
       },
       {
         id: "iron-willed",
@@ -228,14 +214,3 @@ export async function fetchPortfolioData(): Promise<PortfolioData> {
   return portfolioData
 }
 
-// Function to update portfolio data (would connect to a real CMS API)
-export async function updatePortfolioData(data: Partial<PortfolioData>): Promise<PortfolioData> {
-  // In a real implementation, this would send data to a CMS API
-  console.log("Updating portfolio data:", data)
-
-  // Simulate network delay
-  await new Promise((resolve) => setTimeout(resolve, 1000))
-
-  // Return the updated data
-  return { ...portfolioData, ...data }
-}

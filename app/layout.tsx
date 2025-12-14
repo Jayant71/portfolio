@@ -1,10 +1,5 @@
 import type React from "react"
 import "@/app/globals.css"
-import type { Metadata } from "next"
-
-export const metadata: Metadata = {
-  title: "Jayant Patel",
-}
 
 export default function RootLayout({
   children,
@@ -13,7 +8,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className="min-h-screen bg-background antialiased">{children}</body>
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+      </head>
+      <body className="min-h-screen bg-background text-foreground antialiased font-sans">
+        {children}
+      </body>
     </html>
   )
 }

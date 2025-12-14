@@ -4,14 +4,11 @@ import { useEffect, useState } from "react"
 import { ThemeProvider } from "@/components/theme-provider"
 import Header from "@/components/header"
 import Hero from "@/components/hero"
-import About from "@/components/about"
-import Journey from "@/components/journey"
 import Skills from "@/components/skills"
+import Journey from "@/components/journey"
 import Projects from "@/components/projects"
 import Research from "@/components/research"
-import Contact from "@/components/contact"
 import Footer from "@/components/footer"
-import ThreeBackground from "@/components/3d/three-background"
 import { fetchPortfolioData } from "@/lib/cms"
 import type { PortfolioData } from "@/lib/types"
 import LoadingScreen from "@/components/loading-screen"
@@ -29,7 +26,6 @@ export default function Portfolio() {
       } catch (error) {
         console.error("Failed to load portfolio data:", error)
       } finally {
-
         setTimeout(() => setLoading(false), 800)
       }
     }
@@ -42,24 +38,26 @@ export default function Portfolio() {
   }
 
   return (
-    <ThemeProvider attribute="class" defaultTheme="system" enableSystem storageKey="portfolio-theme">
+    <ThemeProvider attribute="class" defaultTheme="dark" enableSystem storageKey="portfolio-theme">
+      {/* Keep the cursor effects as requested */}
       <CursorEffects />
+
       <div className="relative min-h-screen bg-background">
-        <div className="fixed inset-0 z-0">
-          <ThreeBackground />
-        </div>
+        {/* Main content */}
         <div className="relative z-10">
           <Header />
-          <main>
-            <Hero data={portfolioData.hero} />
-            <About data={portfolioData.about} />
-            <Journey data={portfolioData.journey} />
-            <Skills data={portfolioData.skills} />
-            <Projects data={portfolioData.projects} />
-            <Research data={portfolioData.research} />
-            <Contact data={portfolioData.contact} />
-          </main>
-          <Footer data={portfolioData.footer} />
+
+          {/* Layout container - centered content */}
+          <div className="flex flex-col items-center pt-24 w-full">
+            <main>
+              <Hero data={portfolioData.hero} />
+              <Skills data={portfolioData.skills} />
+              <Journey data={portfolioData.journey} />
+              <Projects data={portfolioData.projects} />
+              <Research data={portfolioData.research} />
+            </main>
+            <Footer data={portfolioData.footer} />
+          </div>
         </div>
       </div>
     </ThemeProvider>

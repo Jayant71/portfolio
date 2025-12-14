@@ -3,12 +3,12 @@
 
 import type { PortfolioData } from "./types"
 
-// Simulated CMS data
-const portfolioData: PortfolioData = {
+// Portfolio data - this is static and can be pre-rendered at build time
+export const portfolioData: PortfolioData = {
   hero: {
     title: "Hi, I'm Jayant Patel",
-    subtitle: "Researcher, Software and AI Agent Developer",
-    resumeUrl: "/resume.pdf", // Kept from original cms.ts as not in config.js
+    subtitle: "Software and AI Agent Developer",
+    resumeUrl: "/resume.pdf",
     socialLinks: [
       { platform: "github", url: "https://github.com/Jayant71" },
       { platform: "linkedin", url: "https://linkedin.com/in/jayantpatel71" },
@@ -110,7 +110,7 @@ const portfolioData: PortfolioData = {
   },
   skills: {
     title: "Skills & Technologies",
-    description: "A comprehensive toolkit for modern development and research.", // Kept from original cms.ts
+    description: "A comprehensive toolkit for modern development and research.",
     categories: [
       {
         name: "Programming Languages",
@@ -132,7 +132,7 @@ const portfolioData: PortfolioData = {
   },
   projects: {
     title: "Featured Projects",
-    description: "A selection of projects that showcase my development and research capabilities.", // Kept from original cms.ts
+    description: "A selection of projects that showcase my development and research capabilities.",
     projects: [
       {
         title: "Text Behind Photo",
@@ -163,13 +163,13 @@ const portfolioData: PortfolioData = {
           "AI-powered mobile app for plant disease detection with 98.45% accuracy and integrated chatbot for farmer support. Highlights: Fine-tuned a pre-trained MobileNetV3 CNN model, achieving 98.45% training accuracy and 97.69% validation accuracy for plant disease recognition. Engineered an intuitive Android application leveraging Flutter, designed specifically for farmers; integrated a plant-specific chatbot, resulting in over 100 unique queries answered during testing.",
         imageUrl: "https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?w=500&q=80",
         technologies: ["Python", "Machine Learning", "Flutter"],
-        githubUrl: "https://github.com/Jayant71/Plant-Disease-Prediction--MobileNetV3-.git", // Defaulted as project link in config.js was "#"
+        githubUrl: "https://github.com/Jayant71/Plant-Disease-Prediction--MobileNetV3-.git",
       },
     ],
   },
   research: {
     title: "Research & Publications",
-    description: "Contributing to the advancement of computer science through research and publications.", // Kept from original cms.ts
+    description: "Contributing to the advancement of computer science through research and publications.",
     publications: [
       {
         title: "AI Powered Attention Monitoring System For Book Reading",
@@ -194,7 +194,7 @@ const portfolioData: PortfolioData = {
   contact: {
     title: "Get In Touch",
     description:
-      "Interested in collaboration, research opportunities, or just want to chat about technology? I'd love to hear from you.", // Kept from original cms.ts
+      "Interested in collaboration, research opportunities, or just want to chat about technology? I'd love to hear from you.",
     email: "jayant.07124@gmail.com",
     linkedinUrl: "https://linkedin.com/in/jayantpatel71",
     githubUrl: "https://github.com/Jayant71",
@@ -207,10 +207,12 @@ const portfolioData: PortfolioData = {
   },
 }
 
-// Simulate API call with delay
-export async function fetchPortfolioData(): Promise<PortfolioData> {
-  // Simulate network delay
-  await new Promise((resolve) => setTimeout(resolve, 800))
+// Get data synchronously for SSR - no async needed since data is static
+export function getPortfolioData(): PortfolioData {
   return portfolioData
 }
 
+// Keep async version for backwards compatibility
+export async function fetchPortfolioData(): Promise<PortfolioData> {
+  return portfolioData
+}
